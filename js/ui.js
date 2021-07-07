@@ -31,6 +31,10 @@ window.onload = function () {
     };
   });
 
+  document.querySelector('.close').onclick = function() {
+    document.querySelector('.thankyou_message').style.display = 'none';
+  };
+
 // });
 };
 
@@ -147,8 +151,8 @@ function changeBookDetail_jQuery() {
       document.querySelector('.notebook').innerHTML = '';
       $.ajax({
         type: 'post',
-        // url: 'https://cors-anywhere.herokuapp.com/'+liUrl,
-        url: liUrl,
+        url: 'https://cors-anywhere.herokuapp.com/'+liUrl,
+        // url: liUrl,
         dataType: 'html',
         success: function(data) {
           $('.notebook').html(data);
